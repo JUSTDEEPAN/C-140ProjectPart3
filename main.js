@@ -8,10 +8,7 @@ rightWristY = 0;
 function preload()
 {
     song1 = loadSound("song 1.mp3");
-    song2 = loadSound("song 2 (1).mp3 ");
-
-    poseNet = ml5.poseNet(video, modelLoaded);
-    poseNet.on('pose', gotPoses);
+    song2 = loadSound("song 2 (1).mp3 ");   
 }
 
 function modelLoaded()
@@ -40,6 +37,9 @@ function setup()
 
     video = createCapture(VIDEO);
     video.hide();
+
+    poseNet = ml5.poseNet(video, modelLoaded);
+    poseNet.on('pose', gotPoses);
 }
 
 function draw()
